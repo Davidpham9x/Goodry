@@ -1,0 +1,24 @@
+/*
+** BUTTONS
+** Please use button- as your CSS class prefix
+*/
+
+.button {
+    width: auto;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.button--full {
+    width: 100%;
+    display: block;
+}
+
+.button__wrapper {
+    padding: 0 10px;
+    text-align: center;
+    @include screen ( medium ) {
+        padding: 0;
+    }
+}

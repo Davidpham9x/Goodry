@@ -1,0 +1,135 @@
+.page--quiz {
+    .quiz {
+        .inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+}
+.page--quiz--name {
+    width: 100%;
+    min-height: 100vh;
+    background: url('../images/quiz-name/background-quiz-name.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    @include screen ( big ) {
+        min-height: calc( 100vh - 50px );
+    }
+
+    .quiz {
+        width: 770px;
+        height: 550px;
+        background: url('../images/global/paper.png') no-repeat;
+        margin: 50px auto 0;
+        /* @include ab ( n, 50%, 0, n );
+        @include transform ( translateX(-50%) ); */
+
+        .inner {
+            position: relative;
+            padding: 70px 60px 0;
+            &:before {
+                content: '';
+                width: 105px;
+                height: 231px;
+                background: url('../images/global/pencil.png') no-repeat;
+                @include ab ( n, n, 0, 0 );
+            }
+
+            .heading {
+                text-align: center;
+                @include ab ( -40px, 50%, n, n );
+                @include transform ( translateX(-50%) );
+            }
+            p {
+                color: #000;
+                font-size: 12px;
+                text-align: center;
+
+                margin: 0 auto;
+                max-width: 400px;
+
+                strong {
+                    display: block;
+                }
+            }
+            .form {
+                max-width: 600px;
+                margin: 25px auto 0;
+                border: 1px solid #d5d5d5;
+                @include border-radius ( 7px );
+            }
+            .form__field {
+                &:first-child {
+                    .col {
+                        border-top: 0;
+                    }
+                }
+            }
+            .form__field--two-col {
+                .col {
+                    width: 50%;
+                    float: left;
+                }
+            }
+            .form__field--name {
+                .col {
+                    padding: 20px 50px;
+                    border-left: 1px solid #d5d5d5;
+                    &:first-child {
+                        border-left: 0;
+                    }
+
+                    .title {
+                        line-height: normal;
+                    }
+                }
+            }
+            .col {
+                padding: 30px 50px;
+                border: 1px solid #d5d5d5;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 0;
+
+                .title {
+                    color: #252525;
+                    font-size: 12px;
+                    font-style: italic;
+                    line-height: 30px;
+                    display: block;
+                    @include opacity (0.7);
+                }
+                label {
+                    cursor: pointer;
+                    color: #252525;
+                    font-size: 12px;
+                    font-weight: bold;
+                    line-height: 30px;
+                    text-transform: uppercase;
+                }
+                .input-text {
+                    width: 100%;
+                    height: 25px;
+                }
+            }
+            .col--none-padding {
+                padding: 30px 0;
+            }
+            .button__wrapper {
+                margin-top: 20px;
+            }
+        }
+    }
+    .product {
+        z-index: 2;
+        @include ab ( n, 5%, -6%, n );
+    }
+    .shoes {
+        z-index: 2;
+        @include ab ( n, n, -3%, 10% );
+    }
+}
+.page--quiz--zodiac {
+    .quiz {}
+}

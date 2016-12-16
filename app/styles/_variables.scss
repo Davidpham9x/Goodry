@@ -1,10 +1,15 @@
-$font-standard: "Open Sans Condensed", HelveticaNeue, Helvetica, Arial, sans-serif;
+$font-standard: HelveticaNeue, Helvetica, Arial, sans-serif;
+$font-iCPB: 'iCielPantonBlack', HelveticaNeue, Helvetica, Arial, sans-serif;
+$font-iCPL: 'iCielPantonLight', HelveticaNeue, Helvetica, Arial, sans-serif;
 $font-size: 12px;
+
 $base-color: #000;
+
 $color-hover: #ffdf16;
 $color-link: #ffffff;
 $color-error: #f91059;
-$page-width: 1204px;
+
+$page-width: 1440px;
 $grid: 30px;
 
 @mixin spritePos($x, $y, $w, $h) {

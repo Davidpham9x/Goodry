@@ -1,0 +1,47 @@
+.page--home {
+    width: 100%;
+    min-height: 100vh;
+    background: url('../images/home/background-home.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    @include screen ( big ) {
+    	min-height: calc( 100vh - 50px );
+    }
+
+    .home {
+    	margin: 45px 0 0;
+    }
+    .home__intro {
+    	max-width: 400px;
+
+        .heading {
+            text-align: center;
+        }
+        p {
+        	color: #fff;
+        	font-size: 12px;
+        	text-align: center;
+
+        	strong {
+        		display: block;
+        	}
+        }
+    	.home__cta {
+    		margin-top: 25px;
+
+    		.button__wrapper {
+    			margin-top: 10px;
+    			&:first-child {
+    				margin-top: 0;
+    			}
+    		}
+    	}
+    }
+    .product {
+    	z-index: 2;
+    	@include ab ( n, 10%, -6%, n );
+    	@include screen ( big ) {
+    		left: 20%;
+    	}
+    }
+}

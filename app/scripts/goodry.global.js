@@ -41,7 +41,7 @@ var isMobile = {
             });
 
             $(document).on('change', ".radio-wrapper .input-radio", function() {
-
+                console.log(3);
                 $('input[name="' + $(this).attr('name') + '"]').each(function() {
                     if ($(this).not(':checked')) {
                         $(this).parent().removeClass("radio-selected");

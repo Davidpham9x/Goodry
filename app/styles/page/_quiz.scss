@@ -7,7 +7,8 @@
         }
     }
 }
-.page--quiz--name {
+
+.page--quiz-name {
     width: 100%;
     min-height: 100vh;
     background: url('../images/quiz-name/background-quiz-name.jpg') center center no-repeat;
@@ -20,10 +21,8 @@
     .quiz {
         width: 770px;
         height: 550px;
-        background: url('../images/global/paper.png') no-repeat;
+        background: url('../images/global/paper-quiz.png') no-repeat;
         margin: 50px auto 0;
-        /* @include ab ( n, 50%, 0, n );
-        @include transform ( translateX(-50%) ); */
 
         .inner {
             position: relative;
@@ -32,7 +31,7 @@
                 content: '';
                 width: 105px;
                 height: 231px;
-                background: url('../images/global/pencil.png') no-repeat;
+                background: url('../images/quiz-name/pencil.png') no-repeat;
                 @include ab ( n, n, 0, 0 );
             }
 
@@ -85,6 +84,20 @@
                     }
                 }
             }
+            .form__field--select {
+                .col {
+                    padding: 20px 50px;
+                    background-color: #fff;
+                    border-left: 1px solid #d5d5d5;
+                    &:first-child {
+                        border-left: 0;
+                    }
+
+                    .title {
+                        line-height: normal;
+                    }
+                }
+            }
             .col {
                 padding: 30px 50px;
                 border: 1px solid #d5d5d5;
@@ -124,12 +137,98 @@
     .product {
         z-index: 2;
         @include ab ( n, 5%, -6%, n );
+        width: 100%;
+        max-width: 297px;
+        @include screen ( hd ) {
+            max-width: 397px;
+        }
     }
     .shoes {
         z-index: 2;
         @include ab ( n, n, -3%, 10% );
+        width: 100%;
+        max-width: 166px;
+        @include screen ( hd ) {
+            max-width: 226px;
+        }
     }
 }
-.page--quiz--zodiac {
-    .quiz {}
+
+.page--quiz-zodiac {
+    @extend .page--quiz-name;
+    background: url('../images/quiz-zodiac/background-quiz-zodiac.jpg') center center no-repeat;
+    background-size: 100% 100%;
+
+    .quiz {
+        .inner {
+            &:before {
+                width: 120px;
+                height: 210px;
+                background: url('../images/quiz-zodiac/pencil.png') no-repeat;
+            }
+        }
+    }
+}
+
+.page--quiz-zodiac-result {
+    @extend .page--quiz-name;
+    background: url('../images/quiz-zodiac/background-quiz-zodiac-result.jpg') center center no-repeat;
+    background-size: 100% 100%;
+
+    .quiz {
+        background: url('../images/global/paper-quiz-zodiac-result.png') no-repeat;
+
+        .inner {
+            .wrap-img {
+                text-align: center;
+            }
+            p {
+                strong {
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+.page--quiz-name-result {
+    @extend .page--quiz-name;
+
+    .quiz {
+        width: 790px;
+        height: 567px;
+        background: url('../images/global/paper-quiz-zodiac-name.png') no-repeat;
+
+        .inner {
+            .wrap-baby-name {
+                margin: 30px 0;
+                text-align: center;
+
+                .name {
+                    color: #ec602b;
+                   -webkit-text-fill-color: #ec602b; /* Will override color (regardless of order) */
+                   -webkit-text-stroke-width: 1px;
+                   -webkit-text-stroke-color: #fff;
+
+                    font-size: 32px;
+                    font-family: $font-iCPB;
+                    line-height: normal;
+                    text-transform: uppercase;
+
+                    padding: 15px 20px 2px;
+                    border: 1px solid #d5d5d5;
+                    @include border-radius ( 7px );
+                }
+            }
+            p {
+                strong {
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
 }

@@ -27,6 +27,7 @@ var isMobile = {
             $.support.cors = true;
 
             this.initFormElements();
+            /*goodry.Global.initShowPopupInfo();*/
         },
 
         initFormElements: function() {
@@ -78,6 +79,25 @@ var isMobile = {
 
             $(document).on('change', '.select-wrapper select', function() {
                 $(this).prev('span').replaceWith('<span>' + $(this).find('option:selected').text() + '</span>');
+            });
+        },
+
+        initShowPopupInfo: function() {
+            // Open directly via API
+            $.magnificPopup.open({
+                items: {
+                    src: '#modal-info'
+                },
+                callbacks: {
+                    open: function () {
+                        $('#modal-info').find('.close').click(function (e) {
+                            e.preventDefault();
+
+                            $.magnificPopup.close();
+                        });
+                    }
+                },
+                type: 'inline'
             });
         }
     };

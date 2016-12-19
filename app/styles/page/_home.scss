@@ -45,3 +45,29 @@
     	}
     }
 }
+.facebook-app {
+    .page--home {
+        background: url('../images/home/background-home--app.jpg') center center no-repeat;
+        min-height: 720px;
+        @include screen ( big ) {
+            min-height: 720px;
+        }
+
+        .home__intro {
+            /* margin: 0 auto; */
+            padding: 0 35px;
+
+            .heading {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .product {
+            left: 5%;
+            @include screen ( big ) {
+                left: 5%;
+            }
+        }
+    }
+}

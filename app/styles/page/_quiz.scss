@@ -56,7 +56,8 @@
                 max-width: 600px;
                 margin: 25px auto 0;
                 border: 1px solid #d5d5d5;
-                @include border-radius ( 7px );
+                overflow: hidden;
+                @include border-radius ( 7px, 7px, 0, 0 );
             }
             .form__field {
                 &:first-child {
@@ -86,15 +87,43 @@
             }
             .form__field--select {
                 .col {
-                    padding: 20px 50px;
+                    position: relative;
+                    padding: 20px 50px 40px;
                     background-color: #fff;
                     border-left: 1px solid #d5d5d5;
                     &:first-child {
                         border-left: 0;
                     }
 
+                    .select-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        @include ab ( 0, 0, n, n );
+                    }
                     .title {
                         line-height: normal;
+                    }
+                    label {
+                        width: 100%;
+                        max-width: 50px;
+                        height: 100%;
+                        background-color: #ededed;
+                        color: #252525;
+                        text-align: center;
+                        border-left: 1px solid #d5d5d5;
+                        @include ab ( 0, n, n, 0 );
+
+                        .outer {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            position: relative;
+                        }
+                        .fa {
+                            font-size: 3em;
+                            @include ab ( 50%, 50%, n, n );
+                            @include transform ( translate(-50%, -50%) );
+                        }
                     }
                 }
             }
@@ -123,7 +152,6 @@
                 }
                 .input-text {
                     width: 100%;
-                    height: 25px;
                 }
             }
             .col--none-padding {
@@ -165,6 +193,34 @@
                 width: 120px;
                 height: 210px;
                 background: url('../images/quiz-zodiac/pencil.png') no-repeat;
+            }
+
+            .form__field--select {
+                .col {
+                    background-color: transparent;
+                    padding: 30px 50px;
+
+                    .dob {
+                        float: left;
+                        display: block;
+                        padding: 28px 24px;
+                        border-left: 1px solid #d5d5d5;
+                        &:first-child {
+                            border-left: 0;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: #252525;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                .col--none-padding {
+                    padding: 0;
+                    background-color: #fff;
+                }
             }
         }
     }
@@ -229,6 +285,91 @@
                     margin-bottom: 10px;
                 }
             }
+        }
+    }
+}
+
+.facebook-app {
+    .page--quiz-name {
+        background: url('../images/quiz-name/background-quiz-name--app.jpg') center center no-repeat;
+        background-size: 100% 100%;
+        min-height: 704px;
+        @include screen ( big ) {
+            min-height: 704px;
+        }
+
+        .product, .shoes {
+            display: none;
+        }
+    }
+    .page--quiz-zodiac {
+        background: url('../images/quiz-zodiac/background-quiz-zodiac-result--app.jpg') center center no-repeat;
+        background-size: 100% 100%;
+        min-height: 720px;
+        @include screen ( big ) {
+            min-height: 720px;
+        }
+
+        .quiz {
+            .inner {
+                &:after {
+                    content: '';
+                    width: 116px;
+                    height: 164px;
+                    background: url('../images/quiz-zodiac/start.png') no-repeat;
+                    @include ab ( 5%, n, n, -20px );
+                }
+            }
+        }
+        .product {
+            display: block;
+            max-width: 297px;
+        }
+    }
+    .page--quiz-name-result {
+        background: url('../images/quiz-name/background-quiz-name--app.jpg') center center no-repeat;
+        background-size: 100% 100%;
+        min-height: 704px;
+        @include screen ( big ) {
+            min-height: 704px;
+        }
+
+        .quiz {
+            .inner {
+                &:before {
+                    content: '';
+                    width: 131px;
+                    height: 199px;
+                    background: url('../images/quiz-name/pencil--app.png') no-repeat;
+                    @include ab ( n, 0, 0, n );
+                }
+            }
+        }
+        .product, .shoes {
+            display: none;
+        }
+    }
+    .page--quiz-zodiac-result {
+        background: url('../images/quiz-zodiac/background-quiz-zodiac-result--app.jpg') center center no-repeat;
+        background-size: 100% 100%;
+        min-height: 720px;
+        @include screen ( big ) {
+            min-height: 720px;
+        }
+
+        .quiz {
+            .inner {
+                &:after {
+                    content: '';
+                    width: 116px;
+                    height: 164px;
+                    background: url('../images/quiz-zodiac/start.png') no-repeat;
+                    @include ab ( 5%, n, n, -20px );
+                }
+            }
+        }
+        .product, .shoes {
+            display: none;
         }
     }
 }

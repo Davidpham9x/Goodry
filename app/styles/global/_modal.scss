@@ -13,6 +13,7 @@
 		@include ab ( -16px, n, n, 7px );
 	}
 }
+
 .modal-info {
 	background: url('../images/modal/background-modal-info.png') no-repeat;
 	width: 516px;
@@ -59,5 +60,17 @@
 		.button__wrapper {
 			margin-top: 35px;
 		}
+	}
+}
+
+.facebook-app {
+	.mfp-bg {
+		position: absolute;
+	}
+	.mfp-close {
+		display: none;
+	}
+	.mfp-wrap {
+		position: absolute;
 	}
 }

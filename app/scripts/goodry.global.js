@@ -28,6 +28,20 @@ var isMobile = {
 
             this.initFormElements();
             /*goodry.Global.initShowPopupInfo();*/
+
+            if ( $('[data-toggle="datepicker"]').length ) {
+                $('[data-toggle="datepicker"]').datepicker();
+                $('[data-toggle="datepicker"]').on('pick.datepicker', function(e) {
+                    e.preventDefault();
+
+                    var dob = $('[data-toggle="datepicker"]').datepicker('getDate', true).split('/');
+                        $('.dob-date').text(dob[0]);
+                        $('.dob-month').text(dob[1]);
+                        $('.dob-year').text(dob[2]);
+
+                    $('[data-toggle="datepicker"]').datepicker('hide');
+                });
+            }
         },
 
         initFormElements: function() {
@@ -42,7 +56,6 @@ var isMobile = {
             });
 
             $(document).on('change', ".radio-wrapper .input-radio", function() {
-                console.log(3);
                 $('input[name="' + $(this).attr('name') + '"]').each(function() {
                     if ($(this).not(':checked')) {
                         $(this).parent().removeClass("radio-selected");
@@ -89,8 +102,8 @@ var isMobile = {
                     src: '#modal-info'
                 },
                 callbacks: {
-                    open: function () {
-                        $('#modal-info').find('.close').click(function (e) {
+                    open: function() {
+                        $('#modal-info').find('.close').click(function(e) {
                             e.preventDefault();
 
                             $.magnificPopup.close();

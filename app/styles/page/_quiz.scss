@@ -201,9 +201,12 @@
                     padding: 30px 50px;
 
                     .dob {
+                        cursor: pointer;
                         float: left;
+                        width: 33.333%;
                         display: block;
-                        padding: 28px 24px;
+                        padding: 28px 0;
+                        text-align: center;
                         border-left: 1px solid #d5d5d5;
                         &:first-child {
                             border-left: 0;
@@ -218,7 +221,7 @@
                     }
                 }
                 .col--none-padding {
-                    padding: 0;
+                    padding: 0 50px 0 0;
                     background-color: #fff;
                 }
             }

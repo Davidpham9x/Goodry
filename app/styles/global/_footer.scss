@@ -3,11 +3,14 @@
 */
 
 footer {
-    text-align: right;
+    text-align: center;
 
     width: 100%;
     padding: 15px 20%;
     background-color: #fff;
+    @include screen ( medium ) {
+        text-align: right;
+    }
 
     .copyright {
         color: #000;

@@ -26,18 +26,20 @@ var isMobile = {
         init: function() { //initialization code goes here
             $.support.cors = true;
 
+            this.initBuggerMenu();
             this.initFormElements();
+            this.initHandleWebsiteResize();
             /*goodry.Global.initShowPopupInfo();*/
 
-            if ( $('[data-toggle="datepicker"]').length ) {
+            if ($('[data-toggle="datepicker"]').length) {
                 $('[data-toggle="datepicker"]').datepicker();
                 $('[data-toggle="datepicker"]').on('pick.datepicker', function(e) {
                     e.preventDefault();
 
                     var dob = $('[data-toggle="datepicker"]').datepicker('getDate', true).split('/');
-                        $('.dob-date').text(dob[0]);
-                        $('.dob-month').text(dob[1]);
-                        $('.dob-year').text(dob[2]);
+                    $('.dob-date').text(dob[0]);
+                    $('.dob-month').text(dob[1]);
+                    $('.dob-year').text(dob[2]);
 
                     $('[data-toggle="datepicker"]').datepicker('hide');
                 });
@@ -111,6 +113,34 @@ var isMobile = {
                     }
                 },
                 type: 'inline'
+            });
+        },
+
+        initHandleWebsiteResize: function() {
+            window.windowWidth = 0;
+
+            $(window).resize(function() {
+                window.windowWidth = $(window).width();
+
+                if ( window.windowWidth <= 810 ) {
+                    $(document.body).addClass('facebook-app');
+                } else {
+                    $(document.body).removeClass('facebook-app');
+                }
+            }).trigger('resize');
+        },
+
+        initBuggerMenu: function () {
+            var buggerMenu = $('.bugger-menu'),
+                ulContentMenu = $('.main-menu'),
+                closeBuggerMenu = $('.bugger-menu-close');
+
+            buggerMenu.off('click').on('click', function () {
+                ulContentMenu.show();
+            });
+
+            closeBuggerMenu.off('click').on('click', function () {
+                ulContentMenu.hide();
             });
         }
     };

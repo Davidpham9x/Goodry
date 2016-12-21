@@ -2,17 +2,24 @@
     width: 100%;
     min-height: 100vh;
     background: url('../images/home/background-home.jpg') center center no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     position: relative;
     @include screen ( big ) {
     	min-height: calc( 100vh - 50px );
     }
 
     .home {
-    	margin: 45px 0 0;
+    	margin: 15px 0 0;
+        @include screen ( medium ) {
+            margin: 45px 0 0;
+        }
     }
     .home__intro {
     	max-width: 400px;
+        margin: 0 auto;
+        @include screen ( medium ) {
+            margin: 0;
+        }
 
         .heading {
             text-align: center;
@@ -27,7 +34,10 @@
         	}
         }
     	.home__cta {
-    		margin-top: 25px;
+    		margin-top: 20px;
+            @include screen ( medium ) {
+                margin-top: 25px;
+            }
 
     		.button__wrapper {
     			margin-top: 10px;
@@ -47,15 +57,20 @@
 }
 .facebook-app {
     .page--home {
-        background: url('../images/home/background-home--app.jpg') center center no-repeat;
-        min-height: 720px;
+        background: url('../images/home/background-home--mobile.jpg') center center no-repeat;
+        background-size: 100% 100%;
+        min-height: 962px;
+        @include screen ( medium ) {
+            background: url('../images/home/background-home--app.jpg') center center no-repeat;
+            min-height: 720px;
+        }
         @include screen ( big ) {
             min-height: 720px;
         }
 
         .home__intro {
             /* margin: 0 auto; */
-            padding: 0 35px;
+            /* padding: 0 35px; */
 
             .heading {
                 img {
@@ -64,7 +79,14 @@
             }
         }
         .product {
-            left: 5%;
+            left: 50%;
+            bottom: 0;
+            @include transform ( translateX(-50%) );
+            @include screen ( medium ) {
+                left: 5%;
+                bottom: -6%;
+                transform: none;
+            }
             @include screen ( big ) {
                 left: 5%;
             }

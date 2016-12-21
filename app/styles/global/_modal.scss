@@ -15,21 +15,29 @@
 }
 
 .modal-info {
-	background: url('../images/modal/background-modal-info.png') no-repeat;
-	width: 516px;
+	background: url('../images/modal/background-modal-info.png') center center no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	max-width: 516px;
 	height: 461px;
 	margin: 0 auto;
 
 	.outer {
-		padding: 30px 65px 30px 40px;
+		padding: 15px 35px 15px 20px;
+		@include screen ( medium ) {
+			padding: 30px 65px 30px 40px;
+		}
 	}
 	.inner {
 		h3 {
 			color: #eb5c27;
-			font-size: 30px;
+			font-size: 20px;
 			font-family: $font-iCPB;
 			text-align: center;
 			text-transform: uppercase;
+			@include screen ( medium ) {
+				font-size: 30px;
+			}
 		}
 		.form {
 			margin-top: 40px;

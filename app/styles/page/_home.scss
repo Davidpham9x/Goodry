@@ -1,10 +1,10 @@
 .page--home {
     width: 100%;
-    min-height: 100vh;
+    min-height: 720px;
     background: url('../images/home/background-home.jpg') center center no-repeat;
     background-size: cover;
     position: relative;
-    @include screen ( big ) {
+    @include screen ( hd ) {
     	min-height: calc( 100vh - 50px );
     }
 
@@ -50,7 +50,7 @@
     .product {
     	z-index: 2;
     	@include ab ( n, 10%, -6%, n );
-    	@include screen ( big ) {
+    	@include screen ( hd ) {
     		left: 20%;
     	}
     }

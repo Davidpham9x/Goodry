@@ -139,9 +139,9 @@ header {
 		}
 		.bugger-menu-close {
 			@include ab ( 10px, 10px, n, n );
-			display: none;
+			display: block;
 			@include screen ( medium ) {
-				display: block;
+				display: none;
 			}
 
 			.fa {

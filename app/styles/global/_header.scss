@@ -71,18 +71,6 @@ header {
 			li {
 				padding: 0 15px;
 				position: relative;
-				&.active, &:hover {
-					color: #eb5c27;
-					&:before {
-						content: '';
-						width: 100%;
-						height: 3px;
-						background-color: #eb5c27;
-
-						top: 0;
-						@include opacity ( 1 );
-					}
-				}
 				&:before {
 					content: '';
 					width: 100%;
@@ -99,9 +87,20 @@ header {
 				@include screen ( medium ) {
 					display: inline-block;
 					vertical-align: top;
+					&.active, &:hover {
+						&:before {
+							content: '';
+							width: 100%;
+							height: 3px;
+							background-color: #eb5c27;
 
-					a {
-						color: #3ab44a;
+							top: 0;
+							@include opacity ( 1 );
+						}
+
+						a {
+							color: #eb5c27;
+						}
 					}
 				}
 				@include screen ( ipad ) {
@@ -121,6 +120,7 @@ header {
 					padding-top: 30px;
 					@include transition ( all .2s ease-in-out );
 					@include screen ( medium ) {
+						color: #3ab44a;
 						font-size: 16px;
 						padding-top: 20px;
 					}
@@ -139,7 +139,6 @@ header {
 		}
 		.bugger-menu-close {
 			@include ab ( 10px, 10px, n, n );
-			display: block;
 			@include screen ( medium ) {
 				display: none;
 			}
@@ -152,11 +151,6 @@ header {
 	}
 }
 
-.facebook-app {
-	header {
-		/* padding: 15px 30px;
-		@include screen ( ipadPortrait ) {
-			padding: 15px 40px 15px 55px;
-		} */
-	}
-}
+/* .facebook-app {
+	header {}
+} */

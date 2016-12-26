@@ -88,8 +88,21 @@
                 overflow: hidden;
                 @include border-radius ( 7px, 7px, 0, 0 );
             }
+            .form__field--gender {
+                .col {
+                    &:first-child {
+                        padding-bottom: 0;
+                        @include screen ( medium ) {
+                            padding-bottom: 15px;
+                        }
+                    }
+                }
+            }
             .form__field {
+                border-top: 1px solid #d5d5d5;
                 &:first-child {
+                    border-top: 0;
+
                     .col {
                         border-top: 0;
                     }
@@ -103,12 +116,6 @@
                     }
                 }
             }
-            .form__field--gender {
-                .col {
-                    padding-bottom: 0;
-                    /* &:first-child {} */
-                }
-            }
             .form__field--name {
                 .col {
                     padding: 15px 25px;
@@ -117,7 +124,7 @@
                         border-top: 0;
                     }
                     @include screen ( medium ) {
-                        padding: 20px 50px;
+                        padding: 20px 40px;
                         border-top: 0;
                         border-left: 1px solid #d5d5d5;
                         &:first-child {
@@ -140,7 +147,7 @@
                         border-top: 0;
                     }
                     @include screen ( medium ) {
-                        padding: 20px 50px 40px;
+                        padding: 20px 40px 40px;
                         border-top: 0;
                         border-left: 1px solid #d5d5d5;
                         &:first-child {
@@ -158,13 +165,17 @@
                     }
                     label {
                         width: 100%;
-                        max-width: 50px;
+                        max-width: 42px;
                         height: 100%;
                         background-color: #ededed;
                         color: #252525;
                         text-align: center;
+                        border-top: 1px solid #d5d5d5;
                         border-left: 1px solid #d5d5d5;
                         @include ab ( 0, n, n, 0 );
+                        @include screen ( medium ) {
+                            border-top: 0;
+                        }
 
                         .outer {
                             width: 100%;
@@ -183,7 +194,7 @@
             .col {
                 padding: 15px 25px;
                 @include screen ( medium ) {
-                    padding: 20px 50px;
+                    padding: 20px 40px;
                     border: 1px solid #d5d5d5;
                     border-left: 0;
                     border-right: 0;
@@ -219,7 +230,7 @@
             .col--none-padding {
                 padding: 15px 25px;
                 @include screen ( medium ) {
-                    padding: 30px 0;
+                    padding: 20px;
                 }
             }
             .button__wrapper {
@@ -275,22 +286,25 @@
                     background-color: transparent;
                     padding: 15px 25px;
                     @include screen ( medium ) {
-                        padding: 30px 50px;
+                        padding: 30px 40px;
                     }
 
                     .dob {
                         cursor: pointer;
                         float: left;
                         width: 33.333%;
+                        min-height: 74px;
                         display: block;
-                        padding: 14px 0;
+                        /* padding: 14px 0; */
                         text-align: center;
+                        position: relative;
+                        border-top: 1px solid #d5d5d5;
                         border-left: 1px solid #d5d5d5;
                         &:first-child {
                             border-left: 0;
                         }
                         @include screen ( medium ) {
-                            padding: 28px 0;
+                            border-top: 0;
                         }
 
                         span {
@@ -302,7 +316,7 @@
                     }
                 }
                 .col--none-padding {
-                    padding: 0 50px 0 0;
+                    padding: 0 40px 0 0;
                     background-color: #fff;
                 }
             }
@@ -358,10 +372,18 @@
             background-size: 100% 100%;
         }
 
-        .inner {
+        >.inner {
             .wrap-baby-name {
                 margin: 30px 0;
                 text-align: center;
+
+                .outer {
+                    margin: 0 auto;
+                    display: inline-block;
+                    padding: 15px 20px 2px;
+                    border: 1px solid #d5d5d5;
+                    @include border-radius ( 7px );
+                }
 
                 .name {
                     color: #ec602b;
@@ -374,9 +396,6 @@
                     line-height: normal;
                     text-transform: uppercase;
 
-                    padding: 15px 20px 2px;
-                    border: 1px solid #d5d5d5;
-                    @include border-radius ( 7px );
                     @include screen ( medium ) {
                         font-size: 32px;
                     }

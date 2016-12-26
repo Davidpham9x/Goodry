@@ -31,7 +31,7 @@ var isMobile = {
             this.initHandleWebsiteResize();
             /*goodry.Global.initShowPopupInfo();*/
 
-            if ($('[data-toggle="datepicker"]').length) {
+            /*if ($('[data-toggle="datepicker"]').length) {
                 $('[data-toggle="datepicker"]').datepicker();
                 $('[data-toggle="datepicker"]').on('pick.datepicker', function(e) {
                     e.preventDefault();
@@ -43,7 +43,7 @@ var isMobile = {
 
                     $('[data-toggle="datepicker"]').datepicker('hide');
                 });
-            }
+            }*/
         },
 
         initFormElements: function() {

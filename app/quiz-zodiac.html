@@ -19,21 +19,47 @@
 						</div>
 						<div class="col col--none-padding clearfix" data-toggle="datepicker">
 							<div class="dob">
-								<span class="dob-date">Ngày</span>
+								<!-- <span class="dob-date">Ngày</span> -->
+								<div class="select-wrapper select-2">
+									<select name="select-day" id="select-day" class="select-day">
+										<option value="0">Ngày</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</div>
 							</div>
 							<div class="dob">
-								<span class="dob-month">Tháng</span>
+								<!-- <span class="dob-month">Tháng</span> -->
+								<div class="select-wrapper select-2">
+									<select name="select-month" id="select-month" class="select-month">
+										<option value="0">Tháng</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</div>
 							</div>
 							<div class="dob">
-								<span class="dob-year">Năm</span>
+								<!-- <span class="dob-year">Năm</span> -->
+								<div class="select-wrapper select-2">
+									<select name="select-year" id="select-year" class="select-year">
+										<option value="0">Năm</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</div>
 							</div>
-							<label>
+							<label for="">
 								<span class="outer">
 									<i class="fa fa-angle-down" aria-hidden="true"></i>
 								</span>
 							</label>
 						</div>
 					</div>
+				</div>
+
+				<!-- /* Error */ -->
+				<div class="text-center error">
+					<span id="notification" style="color: red;">Vui lòng nhập ngày tháng năm sinh của bé!</span>
 				</div>
 
 	    		<div class="button__wrapper">

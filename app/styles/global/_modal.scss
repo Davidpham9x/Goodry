@@ -4,7 +4,7 @@
 		height: 100%;
 		position: relative;
 	}
-	.inner {}
+	/* .inner {} */
 	.close {
 		background: url('../images/modal/icon-close.png') no-repeat;
 		width: 43px;
@@ -21,9 +21,12 @@
 	max-width: 516px;
 	height: 461px;
 	margin: 0 auto;
+	/* margin: 15% auto;
+	@include screen ( ipad ) {
+	} */
 
 	.outer {
-		padding: 15px 35px 15px 20px;
+		padding: 15px 25px 15px 10px;
 		@include screen ( medium ) {
 			padding: 30px 65px 30px 40px;
 		}
@@ -80,5 +83,8 @@
 	}
 	.mfp-wrap {
 		position: absolute;
+	}
+	.mfp-content {
+		margin-top: 20%;
 	}
 }

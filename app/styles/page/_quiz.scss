@@ -170,12 +170,12 @@
                         background-color: #ededed;
                         color: #252525;
                         text-align: center;
-                        border-top: 1px solid #d5d5d5;
+                        /* border-top: 1px solid #d5d5d5; */
                         border-left: 1px solid #d5d5d5;
                         @include ab ( 0, n, n, 0 );
-                        @include screen ( medium ) {
+                        /* @include screen ( medium ) {
                             border-top: 0;
-                        }
+                        } */
 
                         .outer {
                             width: 100%;
@@ -194,7 +194,7 @@
             .col {
                 padding: 15px 25px;
                 @include screen ( medium ) {
-                    padding: 20px 40px;
+                    padding: 15px 40px;
                     border: 1px solid #d5d5d5;
                     border-left: 0;
                     border-right: 0;
@@ -230,7 +230,7 @@
             .col--none-padding {
                 padding: 15px 25px;
                 @include screen ( medium ) {
-                    padding: 20px;
+                    padding: 15px;
                 }
             }
             .button__wrapper {
@@ -312,6 +312,12 @@
                             font-weight: bold;
                             color: #252525;
                             text-transform: uppercase;
+                        }
+                    }
+                    label {
+                        border-top: 1px solid #d5d5d5;
+                        @include screen ( medium ) {
+                            border-top: 0;
                         }
                     }
                 }

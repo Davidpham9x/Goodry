@@ -21,6 +21,9 @@
                     text-transform: uppercase;
                 }
             }
+            .mCustomScrollbar {
+                height: 150px;
+            }
         }
     }
 }
@@ -372,6 +375,11 @@
             }
             .wrap-img {
                 text-align: center;
+
+                img {
+                    width: 100%;
+                    max-width: 295px;
+                }
             }
             p {
                 strong {
@@ -401,6 +409,11 @@
         }
 
         >.inner {
+            .heading {
+                img {
+                    max-width: 282px;
+                }
+            }
             .wrap-baby-name {
                 margin: 30px 0;
                 text-align: center;
